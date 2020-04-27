@@ -1,0 +1,28 @@
+{
+  "name": "tool-decode-raw-transaction",
+  "version": "1.0.0",
+  "description": "A tool decodes raw transaction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makkii-dev/tool-decode-raw-transaction.git"
+  },
+  "author": "Chris <cybercoder2009@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makkii-dev/tool-decode-raw-transaction/issues"
+  },
+  "homepage": "https://github.com/makkii-dev/tool-decode-raw-transaction#readme",
+  "dependencies": {
+    "aion-rlp": "0.0.1",
+    "aion-web3-avm-abi": "1.2.6-beta.6",
+    "big-integer": "^1.6.48",
+    "bignumber.js": "^9.0.0",
+    "blake2b": "^2.1.3",
+    "bn.js": "^5.1.1",
+    "tweetnacl": "^1.0.3"
+  }
+}
