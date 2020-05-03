@@ -222,6 +222,9 @@ function decode_method(data){
                     case 0x22:
                         //console.log('case 0x3122 address[]', buf)
                         let addresses = abi.decode('address[]', buf)
+                        for(let i = 0, m = addresses.length; i < m; i++){
+                            addresses[i] = addresses[i].toLowerCase()
+                        }
                         params.push({
                             type: 'address[]',   
                             value: addresses
