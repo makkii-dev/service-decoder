@@ -1,7 +1,8 @@
 const ABICoder = require('aion-web3-avm-abi')
 const BN = require('bn.js')
 const BigNumber = require('bignumber.js')
-const keypair = require('./lib_keypair.js')
+// const keypair = require('./lib_keypair.js')
+const keypair = require('lib-keypair')
 const rpc = require('./lib_rpc.js')
 
 const CONTRACT = '0xa0b28ca59300440597de68db37e8cf9021fa7a5cef9ed7eee5e878241520a2aa'
@@ -44,30 +45,7 @@ let byte = 0,
     ],
     array_biginteger = [new BigNumber(0), new BigNumber(255), new BigNumber(256)]
 
-console.log('        byte', byte)
-console.log('     boolean', boolean)
-console.log('        char', char)
-console.log('       short', short)
-console.log('         int', int)
-console.log('        long', long)
-console.log('       float', float)
-console.log('      double', double)
-console.log('      string', string)
-console.log('     address', address)
-console.log('  biginteger', biginteger)
-console.log('      byte[]', array_byte)
-console.log('   boolean[]', array_boolean)
-console.log('      char[]', array_char)
-console.log('     short[]', array_short)
-console.log('       int[]', array_int)
-console.log('      long[]', array_long)
-console.log('     float[]', array_float)
-console.log('    double[]', array_double)
-console.log('    string[]', array_string)
-console.log('   address[]', array_address)
-console.log('biginteger[]', array_biginteger, '\n')
-
-let k = keypair.from_private_key(PRIVATE)
+let k = keypair.from_private_key('aion', PRIVATE)
 console.log('[build_raw_transaction/private_key]', k.private_key)
 console.log('[build_raw_transaction/public_key]', k.public_key)
 console.log('[build_raw_transaction/address]', k.address, '\n')
@@ -102,6 +80,4 @@ let tx = {
     type
 }
 
-const signed = keypair.sign(k.private_key, k.public_key, tx)
-console.log('[build_raw_transaction/raw]', signed.tx, '\n')
-console.log('[build_raw_transaction/signature]', signed.signature, '\n')
+console.log('[build_raw_transaction/raw]', k.sign(tx), '\n')
